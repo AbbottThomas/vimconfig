@@ -10,3 +10,21 @@ set cursorline "当前行高亮
 set showmatch "括号，自动高亮另一个
 set hlsearch "搜索时高亮匹配结果
 set incsearch "输入搜索模式时，每输入一个字符，就自动跳转一个匹配结果
+inoremap jj <Esc> 
+nnoremap H ^ 
+nnoremap L $
+nnoremap LL $A
+inoremap ( ()<LEFT>
+inoremap < <><LEFT>
+inoremap { {}<LEFT><CR><Esc>O
+inoremap " ""<LEFT>
+inoremap " ""<LEFT>
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.py,*.c  exec ":call SetTitle()"
+func SetTitle()
+	if &filetype == 'sh'
+		 call setline(1,"\##################################################################")
+		 call append(line("."), "\# File Name: ".expand("%"))
+
+	endif
+    autocmd BufNewFile * normal G  
+endfunc
