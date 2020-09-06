@@ -10,6 +10,7 @@ set cursorline "当前行高亮
 set showmatch "括号，自动高亮另一个
 set hlsearch "搜索时高亮匹配结果
 set incsearch "输入搜索模式时，每输入一个字符，就自动跳转一个匹配结果
+vnoremap jj <Esc> 
 inoremap jj <Esc> 
 nnoremap H ^ 
 nnoremap L $
